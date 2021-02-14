@@ -17,6 +17,7 @@ export namespace Components {
     interface AppRoot {
     }
     interface StonkCard {
+        "stonkData": any;
     }
 }
 declare global {
@@ -69,6 +70,7 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface StonkCard {
+        "stonkData"?: any;
     }
     interface IntrinsicElements {
         "app-dashboard": AppDashboard;
