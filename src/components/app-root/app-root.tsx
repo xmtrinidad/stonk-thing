@@ -11,6 +11,8 @@ export class AppRoot {
       <div>
         <header>
           <h1>Stonks Thing</h1>
+          <h1>Total Investments: $5,000</h1>
+          <button>Create Investment Group</button>
         </header>
 
         <main>
