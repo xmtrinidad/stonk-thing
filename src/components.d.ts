@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MatchResults } from "@stencil/router";
 export namespace Components {
+    interface AppCreate {
+    }
     interface AppDashboard {
     }
     interface AppHome {
@@ -21,6 +23,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppCreateElement extends Components.AppCreate, HTMLStencilElement {
+    }
+    var HTMLAppCreateElement: {
+        prototype: HTMLAppCreateElement;
+        new (): HTMLAppCreateElement;
+    };
     interface HTMLAppDashboardElement extends Components.AppDashboard, HTMLStencilElement {
     }
     var HTMLAppDashboardElement: {
@@ -52,6 +60,7 @@ declare global {
         new (): HTMLStonkCardElement;
     };
     interface HTMLElementTagNameMap {
+        "app-create": HTMLAppCreateElement;
         "app-dashboard": HTMLAppDashboardElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
@@ -60,6 +69,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppCreate {
+    }
     interface AppDashboard {
     }
     interface AppHome {
@@ -73,6 +84,7 @@ declare namespace LocalJSX {
         "stonkData"?: any;
     }
     interface IntrinsicElements {
+        "app-create": AppCreate;
         "app-dashboard": AppDashboard;
         "app-home": AppHome;
         "app-profile": AppProfile;
@@ -84,6 +96,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-create": LocalJSX.AppCreate & JSXBase.HTMLAttributes<HTMLAppCreateElement>;
             "app-dashboard": LocalJSX.AppDashboard & JSXBase.HTMLAttributes<HTMLAppDashboardElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;

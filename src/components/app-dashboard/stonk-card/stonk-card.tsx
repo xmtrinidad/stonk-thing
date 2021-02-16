@@ -1,5 +1,5 @@
-import { Component, getRenderingRef, h, Prop } from '@stencil/core';
-import { getGlobalQuote } from '../../../api/ALPHA_VANTAGE_API';
+import { Component, h, Prop } from '@stencil/core';
+// import { getGlobalQuote } from '../../../api/ALPHA_VANTAGE_API';
 
 @Component({
   tag: 'stonk-card',
@@ -15,6 +15,7 @@ export class StonkCard {
   }
 
   checkGainLossTicker(t) {
+    console.log(t);
     // Add some API stuff here to check if gain/loss
 
     return 'green';
